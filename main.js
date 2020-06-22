@@ -1,4 +1,6 @@
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let leapYear = [31,29,31,30,31,30,31,31,30,31,30,31];
+let notLeapYear = [31,28,31,30,31,30,31,31,30,31,30,31];
 // Write a JavaScript program to display the current day and time in the following format
 //  Sample Output : Today is : Tuesday.
 // Current time is : 10 PM : 30 : 38
@@ -66,8 +68,43 @@ const findFirstJanuary = (year1,year2) => {
     }
   }
 }
-
-
-
-
+//Write a JavaScript program where the program takes a random integer between 1 to 10,
+//the user is then prompted to input a guess number. If the user input matches with guess number,
+//the program will display a message "Good Work" otherwise display a message "Not matched".
+const guessRandomNumber = () => {
+  let isPrmt = true;
+  while(isPrmt) {
+    let prmt = prompt('Enter a number from 1 to 10');
+    let randomNumber = Math.floor(Math.random() * 10 + 1);
+    if (prmt === null) {
+      alert('You have left game')
+      break;
+    } 
+    prmt = +prmt;
+    if (isNaN(prmt)) {
+      alert('Its not a number');
+    } else if (randomNumber === prmt) {
+      alert('Good Work');
+      isPrmt = false;
+    } else {
+      alert('Not matched');
+    }
+  }
+}
+//Write a JavaScript program to calculate days left until next Christmas.
+const daysLeftToChristmas = () => {
+  let date = new Date();
+  let amountOfDays = date.getDate();
+  if (date.getFullYear() % 4 === 0) {
+    for (let i = 0; i < date.getMonth(); i++) {
+      amountOfDays += leapYear[i];
+    }
+    return 372 - amountOfDays;
+  } else {
+    for (let i = 0; i < date.getMonth(); i++) {
+      amountOfDays += notLeapYear[i];
+    }
+    return 371 - amountOfDays;
+  }
+ }
 
