@@ -5,15 +5,15 @@ let notLeapYear = [31,28,31,30,31,30,31,31,30,31,30,31];
 //  Sample Output : Today is : Tuesday.
 // Current time is : 10 PM : 30 : 38
 const currentDayAndTime = () => {
-  let data = new Date();
+  let date = new Date();
   let amOrPm;
-  if (data.getHours() < 12) {
+  if (date.getHours() < 12) {
     amOrPm = 'AM'
   } else {
     amOrPm = 'PM';
   }
-  console.log("Today is " + days[data.getDay()]);
-  console.log('Current time is: ' + data.getHours() + amOrPm + " : " + data.getMinutes() + " : " + data.getSeconds());
+  console.log("Today is " + days[date.getDay()]);
+  console.log('Current time is: ' + date.getHours() + amOrPm + " : " + date.getMinutes() + " : " + date.getSeconds());
 }
 // Write a JavaScript program to print the contents of the current window. 
 const printContent = () => window.print();
@@ -107,4 +107,18 @@ const daysLeftToChristmas = () => {
     return 371 - amountOfDays;
   }
  }
+ // Write a JavaScript program to calculate multiplication and division of two numbers (input from user).
+let number1 = document.getElementById('number1');
+let number2 = document.getElementById('number2');
+let divide = document.getElementById('divide');
+let multyply = document.getElementById('multyply');
+let result = document.getElementById('result');
 
+const calculate = () => {
+  divide.addEventListener('click', () => {
+    result.innerText = +number1.value / +number2.value;
+  })
+  multyply.addEventListener('click', () => {
+    result.innerText = +number1.value * +number2.value;;
+  })
+}
