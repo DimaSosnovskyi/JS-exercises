@@ -122,3 +122,16 @@ const calculate = () => {
     result.innerText = +number1.value * +number2.value;;
   })
 }
+
+//Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+const convertFromCelciusToFahrenheitAndInvert = (str) => {
+  if (str.charAt(str.length - 1) === 'f' || str.charAt(str.length - 1) === 'F') {
+    let degrees = +str.slice(0,str.length - 1);
+    return 5/9*(degrees-32);;
+  } else if (str.charAt(str.length - 1) === 'c' || str.charAt(str.length - 1) === 'C') {
+    let degrees = +str.slice(0,str.length - 1);
+    return degrees * 1.8 + 32;
+  } else {
+    console.log('Enter Celsius or Fahrenheit')
+  }
+}
