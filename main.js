@@ -135,3 +135,11 @@ const convertFromCelciusToFahrenheitAndInvert = (str) => {
     console.log('Enter Celsius or Fahrenheit')
   }
 }
+//Write a JavaScript program to get the website URL (loading page).
+let loadWebsiteUrl = () => document.URL
+// Write a JavaScript exercise to create a variable using a user-defined name.
+const var_name = 'absd';
+let n = 4;
+this.var_name = n;
+console.log(this.var_name)
+
